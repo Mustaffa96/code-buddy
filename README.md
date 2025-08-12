@@ -5,7 +5,7 @@ A beautiful, performant, and free AI-powered coding assistant web app, leveragin
 ## Features
 
 - **Unlimited, free Claude AI access** (Sonnet 4, Opus 4)
-- **Modern, beautiful UI** (optimized for CLS and LCP)
+- **Modern, beautiful UI** (optimized for CLS and LCP, now with animated, glowing button hover effects and CodePen-inspired fill animation)
 - **Zero-lint, SOLID, clean architecture**
 - **Fast, streaming responses**
 - **Mobile responsive**
@@ -69,5 +69,11 @@ The UI is styled with a Gundam-inspired color palette:
 
 - **Blue** (#1976d2), **Red** (#e53935), **Yellow** (#ffd600), **White** (#f5f7fa), and **Metallic Gray** (#b0bec5)
 - Buttons, chat bubbles, avatars, and modal all reflect this theme
+- **Buttons now feature beautiful animated hover effects with glowing highlights, smooth scaling, and a CodePen-inspired fill animation for a modern, interactive feel**
 - You can further customize the theme by editing CSS variables in `style.css`
 - Fully responsive and mobile-friendly layout for all devices
+
+## Privacy & Data Collection
+
+- Coding Buddy does **not collect your personal data**. All data is sandboxed and handled securely as described in the [Puter.js Security Documentation](https://docs.puter.com/security/).
+- You can access the privacy notice at any time via the 'Privacy Notice' link in the navbar, which opens a dedicated modal.

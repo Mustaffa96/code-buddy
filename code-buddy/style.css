@@ -4,17 +4,25 @@
  * Optimized for CLS and LCP
  */
 
+/*
+ * Updated Gundam Tailwind Theme Colors
+ * Ghost white: #F1F5FE
+ * Rich black: #061821
+ * Redwood: #B54555
+ * Satin sheen gold: #C8A759
+ * Egyptian blue: #0A32A7
+ */
 :root {
-  --primary: #1976d2; /* Gundam blue */
-  --primary-dark: #0d47a1;
-  --accent: #e53935; /* Gundam red */
-  --yellow: #ffd600; /* Gundam yellow */
-  --background: #f5f7fa; /* White/very light gray */
-  --surface: #ffffff;
-  --text: #23272e;
-  --border: #b0bec5; /* Metallic gray */
+  --primary: #0a32a7; /* Egyptian blue */
+  --primary-dark: #061821; /* Rich black */
+  --accent: #b54555; /* Redwood */
+  --yellow: #c8a759; /* Satin sheen gold */
+  --background: #f1f5fe; /* Ghost white */
+  --surface: #f9fbff; /* Ghost white 800 */
+  --text: #061821; /* Rich black */
+  --border: #94b2f8; /* Ghost white 400 */
   --radius: 1.2rem;
-  --shadow: 0 2px 16px rgba(25, 118, 210, 0.1);
+  --shadow: 0 2px 16px rgba(10, 50, 167, 0.08);
   --font-main: "Inter", Arial, sans-serif;
   --font-mono: "Fira Mono", monospace;
 }
@@ -118,8 +126,12 @@ header p {
 }
 #send-btn:hover,
 #send-btn:focus {
+  /* Beautiful hover: deep blue, accent border, scale, glow, shadow */
   background: var(--primary-dark);
   border-color: var(--accent);
+  transform: scale(1.06);
+  box-shadow: 0 4px 18px rgba(25, 118, 210, 0.18), 0 0 0 3px var(--accent);
+  transition: background 0.22s, border 0.22s, transform 0.18s, box-shadow 0.22s;
 }
 #clear-btn {
   background: #fff;
@@ -135,9 +147,14 @@ header p {
 }
 #clear-btn:hover,
 #clear-btn:focus {
+  /* Beautiful hover: soft red background, deep blue border, scale, subtle shadow */
   background: #ffeaea;
   color: var(--primary-dark);
   border-color: var(--primary-dark);
+  transform: scale(1.06);
+  box-shadow: 0 2px 12px rgba(229, 57, 53, 0.13);
+  transition: background 0.22s, color 0.22s, border 0.22s, transform 0.18s,
+    box-shadow 0.22s;
 }
 #export-btn-container {
   display: flex;
@@ -160,9 +177,14 @@ header p {
 }
 .export-btn:hover,
 .export-btn:focus {
+  /* Beautiful hover: yellow highlight, accent border, scale, glow */
   background: #fffde7;
   color: var(--accent);
   border-color: var(--accent);
+  transform: scale(1.06);
+  box-shadow: 0 4px 18px rgba(255, 214, 0, 0.13), 0 0 0 3px var(--accent);
+  transition: background 0.22s, color 0.22s, border 0.22s, transform 0.18s,
+    box-shadow 0.22s;
 }
 
 #chat-area {
@@ -411,4 +433,98 @@ button,
   font-family: "Celestial", var(--font-main);
   font-size: 2rem;
   letter-spacing: 1.2px;
+}
+
+/*
+ * Animated Fill Hover Effect for Buttons (inspired by @jh3y)
+ * Applies to all main action buttons for a modern, interactive feel
+ * Uses ::before pseudo-element for animated fill, with theme colors
+ */
+.hover-fill-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: background 0.3s, color 0.3s, transform 0.18s;
+}
+.hover-fill-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0.13;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+.hover-fill-btn:hover::before,
+.hover-fill-btn:focus::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/* Button color and lift on hover */
+.hover-fill-btn:hover,
+.hover-fill-btn:focus {
+  color: var(--primary-dark);
+  background: var(--yellow);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 18px rgba(25, 118, 210, 0.13), 0 0 0 3px var(--accent);
+}
+/* Specific color overrides for each button type */
+#send-btn.hover-fill-btn {
+  background: var(--primary);
+  color: #fff;
+  border: 2px solid var(--primary-dark);
+}
+#send-btn.hover-fill-btn:hover,
+#send-btn.hover-fill-btn:focus {
+  background: var(--yellow);
+  color: var(--primary-dark);
+  border-color: var(--accent);
+}
+#clear-btn.hover-fill-btn {
+  background: #fff;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+#clear-btn.hover-fill-btn:hover,
+#clear-btn.hover-fill-btn:focus {
+  background: var(--yellow);
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+.export-btn.hover-fill-btn {
+  background: #fff;
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
+}
+.export-btn.hover-fill-btn:hover,
+.export-btn.hover-fill-btn:focus {
+  background: var(--yellow);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Privacy Notice Navbar Link */
+.privacy-link {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.08rem;
+  text-decoration: underline;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.7rem;
+  transition: background 0.18s, color 0.18s;
+  outline: none;
+}
+.privacy-link:hover,
+.privacy-link:focus {
+  background: var(--yellow);
+  color: var(--primary-dark);
+  text-decoration: none;
 }

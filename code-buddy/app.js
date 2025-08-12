@@ -262,4 +262,30 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Privacy Modal logic: open/close on navbar link click
+  const privacyLink = document.getElementById("privacy-link");
+  const privacyModal = document.getElementById("privacy-modal");
+  const closePrivacyBtn = document.getElementById("close-privacy-modal");
+  if (privacyLink && privacyModal && closePrivacyBtn) {
+    privacyLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      privacyModal.style.display = "flex";
+      closePrivacyBtn.focus();
+    });
+    closePrivacyBtn.addEventListener("click", () => {
+      privacyModal.style.display = "none";
+      privacyLink.focus();
+    });
+    // Close privacy modal on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (
+        privacyModal.style.display !== "none" &&
+        (e.key === "Escape" || e.key === "Esc")
+      ) {
+        privacyModal.style.display = "none";
+        privacyLink.focus();
+      }
+    });
+  }
 });

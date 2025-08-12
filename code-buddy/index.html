@@ -48,13 +48,18 @@
         <header>
             <h1 id="header-title">🤖 CODING BUDDY</h1>
             <p>Your AI-powered coding assistant, free and unlimited!</p>
+            <!-- Privacy Notice Navbar Link -->
+            <nav style="margin-top:0.5rem;">
+                <a href="#" id="privacy-link" class="privacy-link" aria-haspopup="dialog"
+                    aria-controls="privacy-modal">🔒 Privacy Notice</a>
+            </nav>
         </header>
         <main>
             <form id="chat-form" autocomplete="off">
                 <label for="user-input" class="visually-hidden">Ask Coding Buddy</label>
                 <textarea id="user-input" placeholder="Ask me anything about coding..." rows="2" required></textarea>
-                <button type="submit" id="send-btn">SEND</button>
-                <button type="button" id="clear-btn" aria-label="Clear chat">CLEAR</button>
+                <button type="submit" id="send-btn" class="hover-fill-btn">SEND</button>
+                <button type="button" id="clear-btn" class="hover-fill-btn" aria-label="Clear chat">CLEAR</button>
             </form>
             <section id="chat-area" aria-live="polite"></section>
             <div id="export-btn-container"></div>
@@ -65,6 +70,21 @@
         </footer>
     </div>
     <script src="app.js"></script>
+    <!-- Privacy Modal (separate, hidden by default) -->
+    <div id="privacy-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title"
+        style="display:none;">
+        <div class="modal-content">
+            <button class="modal-close" id="close-privacy-modal" aria-label="Close privacy modal">&times;</button>
+            <h2 id="privacy-title">🔒 PRIVACY NOTICE</h2>
+            <div
+                style="margin-top:1.2rem; background:#fff8e1; border-left:4px solid #e53935; padding:1rem 1.2rem; border-radius:0.7rem; color:#23272e; font-size:1.04rem;">
+                This system <b>does not collect your personal data</b>. All data is sandboxed and handled securely as
+                described in the <a href="https://docs.puter.com/security/" target="_blank" rel="noopener">Puter.js
+                    Security Documentation</a>.
+            </div>
+        </div>
+    </div>
+    <!-- End Privacy Modal -->
 </body>
 
 </html>
