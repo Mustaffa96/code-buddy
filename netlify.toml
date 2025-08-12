@@ -1,9 +1,6 @@
 [build]
-  # If your files are in the code-buddy folder
-  publish = "code-buddy"
-  
-  # If you move files to root, use:
-  # publish = "."
+  # Files are in the root directory
+  publish = "."
 
 [build.environment]
   # No build environment needed for static site
