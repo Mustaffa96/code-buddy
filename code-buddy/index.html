@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Buddy - Powered by Claude</title>
+    <!-- Puter.js for Claude API -->
+    <script src="https://js.puter.com/v2/"></script>
+    <!-- Google Fonts for beautiful typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-..."
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="description"
+        content="Coding Buddy: Your AI-powered coding assistant, free and unlimited. Powered by Claude via Puter.js. Beautiful, responsive, and Gundam-themed UI!">
+    <meta name="keywords"
+        content="AI, coding assistant, Claude, Puter.js, chatbot, code, programming, Gundam, free, unlimited">
+    <meta property="og:title" content="Coding Buddy - Powered by Claude">
+    <meta property="og:description"
+        content="Your AI-powered coding assistant, free and unlimited. Beautiful, responsive, and Gundam-themed UI!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="public/favicon.jpg">
+    <meta property="og:url" content="https://github.com/mustaffa96/code-buddy">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coding Buddy - Powered by Claude">
+    <meta name="twitter:description"
+        content="Your AI-powered coding assistant, free and unlimited. Beautiful, responsive, and Gundam-themed UI!">
+    <meta name="twitter:image" content="public/favicon.jpg">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+</head>
+
+<body>
+    <div id="greeting-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="greeting-title"
+        style="display:none;">
+        <div class="modal-content">
+            <button class="modal-close" id="close-greeting-modal" aria-label="Close modal">&times;</button>
+            <h2 id="greeting-title">👋WELCOME TO CODING BUDDY!</h2>
+            <ol>
+                <li>Please <strong>register/login</strong> at <a href="https://puter.com/" target="_blank"
+                        rel="noopener">puter.com</a>.</li>
+                <li>Happy coding! Don’t forget to support Puter by subscribing to their plan.</li>
+            </ol>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <h1 id="header-title">🤖 CODING BUDDY</h1>
+            <p>Your AI-powered coding assistant, free and unlimited!</p>
+        </header>
+        <main>
+            <form id="chat-form" autocomplete="off">
+                <label for="user-input" class="visually-hidden">Ask Coding Buddy</label>
+                <textarea id="user-input" placeholder="Ask me anything about coding..." rows="2" required></textarea>
+                <button type="submit" id="send-btn">SEND</button>
+                <button type="button" id="clear-btn" aria-label="Clear chat">CLEAR</button>
+            </form>
+            <section id="chat-area" aria-live="polite"></section>
+            <div id="export-btn-container"></div>
+        </main>
+        <footer>
+            <small>Powered by <a href="https://puter.com/" target="_blank" rel="noopener">Claude via Puter.js</a> | <a
+                    href="https://github.com/mustaffa96/" target="_blank">GitHub</a></small>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
